@@ -13,6 +13,7 @@
 		B228848E1F2FAC4400CB897D /* MicrophoneApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B228848C1F2FAC4400CB897D /* MicrophoneApp.xcdatamodeld */; };
 		B22884901F2FAC4400CB897D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B228848F1F2FAC4400CB897D /* Assets.xcassets */; };
 		B22884931F2FAC4400CB897D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B22884911F2FAC4400CB897D /* LaunchScreen.storyboard */; };
+		B22884BE1F3102A400CB897D /* RecorderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22884BD1F3102A400CB897D /* RecorderVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		B228848F1F2FAC4400CB897D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B22884921F2FAC4400CB897D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B22884941F2FAC4400CB897D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B22884BD1F3102A400CB897D /* RecorderVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecorderVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				B22884851F2FAC4400CB897D /* AppDelegate.swift */,
 				B22884871F2FAC4400CB897D /* ViewController.swift */,
+				B22884BD1F3102A400CB897D /* RecorderVC.swift */,
 				B22884891F2FAC4400CB897D /* Main.storyboard */,
 				B228848F1F2FAC4400CB897D /* Assets.xcassets */,
 				B22884911F2FAC4400CB897D /* LaunchScreen.storyboard */,
@@ -142,6 +145,7 @@
 			files = (
 				B22884881F2FAC4400CB897D /* ViewController.swift in Sources */,
 				B228848E1F2FAC4400CB897D /* MicrophoneApp.xcdatamodeld in Sources */,
+				B22884BE1F3102A400CB897D /* RecorderVC.swift in Sources */,
 				B22884861F2FAC4400CB897D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,6 +312,7 @@
 				B22884991F2FAC4400CB897D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
