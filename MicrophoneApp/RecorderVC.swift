@@ -39,6 +39,7 @@ class RecorderVC: UIViewController, UITextFieldDelegate
         }
     }
     
+    //play the sound when the button is tapped:
     @IBOutlet weak var playButton: UIButton!
     @IBAction func playButton(_ sender: Any)
     {
@@ -63,8 +64,6 @@ class RecorderVC: UIViewController, UITextFieldDelegate
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         
         navigationController!.popViewController(animated: true)
-        
-        
         
     }
     //END OF OUTLETS SECTION
@@ -95,7 +94,7 @@ class RecorderVC: UIViewController, UITextFieldDelegate
         setupRecorder()
         playButton.isEnabled = false
         addButton.isEnabled = false
-        print("\n\n Audio recording file URL adress: ", audioRecorder?.url ,"\n\n")
+        print("\n\n Audio recording file URL adress: ", audioRecorder?.url as Any ,"\n\n")
         
         
     }

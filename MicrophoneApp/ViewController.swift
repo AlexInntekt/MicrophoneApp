@@ -15,7 +15,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     @IBOutlet weak var tableView: UITableView!
     
+    //this array contain the m4a files fetched from CoreData:
     var soundsList : [Sound] = []
+    
+    //AudioPlayer controller:
     var audioPlayer : AVAudioPlayer?
     
     override func viewDidLoad()
@@ -27,49 +30,60 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
     }
     
+    //this function is called every each time the viewController is shown:
     override func viewWillAppear(_ animated: Bool)
     {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         do
         {
+            //fetch audios from coredata and assign them to this local array:
             soundsList = try context.fetch(Sound.fetchRequest())
+            
+            //update the table view with the new m4a files:
             tableView.reloadData()
         } catch {}
         
     }
     
+    //this function sets the number of cells:
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         return soundsList.count
     }
     
+    
+    //defining the cell:
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = UITableViewCell()
         
-        let sound = soundsList[indexPath.row]
+        let soundName = soundsList[indexPath.row]
         
-        cell.textLabel?.text = sound.name
+        cell.textLabel?.text = soundName.name
         
         
         return cell;
     }
-
+    
+    
+    //this function runs each time a cell is tapped:
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         let sound = soundsList[indexPath.row]
-        let audio = AVAudioPlayer()
+        _ = AVAudioPlayer()
         
+        //play the specific audio:
         do
         {
-        audioPlayer = try AVAudioPlayer(data: sound.audio as! Data)
+        audioPlayer = try AVAudioPlayer(data: sound.audio! as Data)
         audioPlayer?.play()
         } catch {}
         
+        //visually deselect the row after tapping it, 'cause it's annoying:
         tableView.deselectRow(at: indexPath, animated: true)
-        
     }
     
+    //this function allows the user to delete a cell in the table view. In the same time, it deletes that object from coredata:
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
     {
         if editingStyle == .delete
@@ -79,12 +93,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
             
+            //delete that specific sound from coredata:
             context.delete(sound)
             
             (UIApplication.shared.delegate as! AppDelegate).saveContext()
             
             do
             {
+                //reupdate local array and the tableview:
                 soundsList = try context.fetch(Sound.fetchRequest())
                 tableView.reloadData()
             } catch {}
