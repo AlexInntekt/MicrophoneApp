@@ -3,7 +3,9 @@
 Sample app that is able to record voice and save it as mp4 files with persistent data. 
 
    iOS compatibility:   versions 7-10
+   
    xCode:               version 8.3.3
+   
    Language:            Swift 3
 
    Functionality: 
