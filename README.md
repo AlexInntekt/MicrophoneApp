@@ -9,8 +9,8 @@ Sample app that is able to record voice and save it as mp4 files with persistent
    Functionality: 
        -the user can record voice, play it, and save it for later access.
 		 
-       -the data is saved with persistent data (CoreData in this case) as binary strings. Then the mp4 files are fetched 
-and assigned into the tableView for easy access.
+       -the data is saved with persistent data (CoreData in this case) as binary strings. 
+Then the mp4 files are fetched and assigned into the tableView for easy access.
 
        -user-friendly buttons and access.
        
