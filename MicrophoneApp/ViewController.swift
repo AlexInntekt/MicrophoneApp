@@ -25,6 +25,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     {
         super.viewDidLoad()
 
+        //play whatever song you want with this:
+        
+        //var audioPlayer: AVAudioPlayer!
+        if var filePath = Bundle.main.path(forResource: "a", ofType:"m4a"){
+            
+            var filePathUrl = NSURL.fileURL(withPath: filePath)
+            try! audioPlayer = AVAudioPlayer(contentsOf: filePathUrl)
+            audioPlayer!.play()
+        }else {
+            print("Path for audio file not found")
+        }
+ 
+       
         tableView.dataSource = self
         tableView.delegate = self
         
